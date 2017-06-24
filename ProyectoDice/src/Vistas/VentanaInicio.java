@@ -68,22 +68,43 @@ public class VentanaInicio extends JFrame {
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 		
 		JButton btnNewButton = new JButton("Dado 3 caras");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DadoTres frame = new DadoTres();
+				frame.setVisible(true);
+				dispose();
+			}
+		});
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Dado 6 caras");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DadoSeis frame = new DadoSeis();
+				frame.setVisible(true);
+				dispose();
+			}
+		});
 		panel_1.add(btnNewButton_1);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new SoftBevelBorder(BevelBorder.RAISED, new Color(0, 0, 0), null, null, null));
 		contentPane.add(panel_2, BorderLayout.CENTER);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(VentanaInicio.class.getResource("/Imagenes/dado2.jpg")));
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 2880, Short.MAX_VALUE)
+			gl_panel_2.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
+					.addComponent(lblNewLabel)
+					.addContainerGap(176, Short.MAX_VALUE))
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 1800, Short.MAX_VALUE )
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addComponent(lblNewLabel)
+					.addContainerGap(77, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
 		

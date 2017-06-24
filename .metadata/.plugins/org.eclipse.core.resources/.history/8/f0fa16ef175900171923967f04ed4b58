@@ -1,0 +1,47 @@
+package Metodos;
+
+import java.util.Random;
+
+public class TiradaDados {
+	
+
+    public int GenerarAleatorioDadoSeis()
+	    {
+	        Random Aleatorio = new Random();
+	        int DadoSeis;
+	         
+	        DadoSeis = Aleatorio.nextInt(6)+1;
+	         
+	        return DadoSeis;
+	    }
+	        
+    public int GenerarAleatorioDadoTres()
+		{
+		    Random Aleatorio = new Random();
+		    int DadoTres;
+		         
+		    DadoTres = Aleatorio.nextInt(3)+1;
+		         
+		    return DadoTres;	        
+	    }
+	 
+	public int TirarDadoSeis()
+        {
+            int tirada;     
+         
+            tirada = GenerarAleatorioDadoSeis();
+        
+            return tirada;
+      
+        }
+	
+	public int TirarDadoTres()
+        {
+           int tirada;     
+         
+           tirada = GenerarAleatorioDadoTres();
+        
+           return tirada;
+      
+       }
+}

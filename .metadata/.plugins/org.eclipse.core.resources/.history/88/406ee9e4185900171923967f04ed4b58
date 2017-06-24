@@ -1,0 +1,52 @@
+package Metodos;
+
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+public class TiradaDados {
+	
+
+    public int GenerarAleatorioDadoSeis()
+	    {
+	        Random Aleatorio = new Random();
+	        int DadoSeis;
+	         
+	        DadoSeis = Aleatorio.nextInt(6)+1;
+	         
+	        return DadoSeis;
+	    }
+	        
+    public int GenerarAleatorioDadoTres()
+		{
+		    Random Aleatorio = new Random();
+		    int DadoTres;
+		         
+		    DadoTres = Aleatorio.nextInt(3)+1;
+		         
+		    return DadoTres;	        
+	    }
+	 
+	public void TirarDadoSeis()
+        {
+            int tiradaSeis;     
+         
+            tiradaSeis = GenerarAleatorioDadoSeis();
+        
+            JOptionPane.showInputDialog(this,"Has sacado un: "+tiradaSeis);
+            
+      
+        }
+	
+	public void TirarDadoTres()
+        {
+           int tiradaTres;     
+         
+           tiradaTres = GenerarAleatorioDadoTres();
+        
+           JOptionPane.showMessageDialog(null,"Tirada","Has sacado un: "+tiradaTres, tiradaTres);
+      
+        }
+}
+	
+

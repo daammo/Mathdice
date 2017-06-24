@@ -1,0 +1,104 @@
+package Vistas;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import java.awt.Color;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+
+public class VentanaInicio extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaInicio frame = new VentanaInicio();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public VentanaInicio() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel, BorderLayout.NORTH);
+		
+		JLabel lblBienvenidoAMathdice = new JLabel("Bienvenido a MathDice:");
+		lblBienvenidoAMathdice.setFont(new Font("Tahoma", Font.BOLD, 18));
+		panel.add(lblBienvenidoAMathdice);
+		
+		JLabel lblEligeUnDado = new JLabel("Elige un dado");
+		lblEligeUnDado.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(lblEligeUnDado);
+		
+		JPanel panel_1 = new JPanel();
+		contentPane.add(panel_1, BorderLayout.SOUTH);
+		
+		JButton btnNewButton = new JButton("Dado 3 caras");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DadoTres frame = new DadoTres();
+				frame.setVisible(true);
+				panel.setVisible(false);
+			}
+		});
+		panel_1.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Dado 6 caras");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DadoSeis frame = new DadoSeis();
+				frame.setVisible(true);
+			}
+		});
+		panel_1.add(btnNewButton_1);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new SoftBevelBorder(BevelBorder.RAISED, new Color(0, 0, 0), null, null, null));
+		contentPane.add(panel_2, BorderLayout.CENTER);
+		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
+		gl_panel_2.setHorizontalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 2880, Short.MAX_VALUE)
+		);
+		gl_panel_2.setVerticalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 1800, Short.MAX_VALUE     )
+		);
+		panel_2.setLayout(gl_panel_2);
+		
+	}
+}
